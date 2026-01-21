@@ -1,27 +1,36 @@
-# WebWorker
+# Web Worker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
+Web Workers são mecanismos que permitem que uma operação de um dado script seja executada em uma thread diferente da thread principal da aplicação Web `Main thread`. Permitindo que cálculos laboriosos sejam processados sem que ocorra bloqueio da thread principal (geralmente associado à interface).
 
-## Development server
+![Web Worker](./images/worker.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Exemplo de Código
 
-## Code scaffolding
+Aqui está um exemplo simples de como criar um Web Worker:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```javascript
+// main.js
+const worker = new Worker('worker.js');
 
-## Build
+worker.onmessage = function(event) {
+    console.log('Mensagem do worker:', event.data);
+};
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+worker.postMessage('Olá, Worker!');
+```
 
-## Running unit tests
+```javascript
+// worker.js
+onmessage = function(event) {
+    console.log('Mensagem do main thread:', event.data);
+    postMessage('Olá, Main Thread!');
+};
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Os Web Workers são uma parte essencial do desenvolvimento web moderno, permitindo que os desenvolvedores realizem tarefas em segundo plano, melhorando a performance e a responsividade das aplicações. Ao utilizar Web Workers, é possível realizar operações pesadas sem bloquear a interface do usuário, proporcionando uma experiência mais fluida e interativa. 
 
-## Running end-to-end tests
+## Links úteis
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- [documentação MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Workers_API#:~:text=Web%20Workers%20s%C3%A3o%20mecanismos%20que,(geralmente%20associado%20%C3%A0%20interface).)
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [Como usar web workers do lado do cliente e do servidor](https://blog.openreplay.com/how-to-use-client-and-server-side-web-workers/)
