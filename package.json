@@ -13,7 +13,10 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "npm run start",
+    "start": "browser-sync -w",
     "test": "npm run test"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.4"
   }
 }

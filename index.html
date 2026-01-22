@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Worker</title>
+</head>
+<body>
+  <form id="form">
+    <div class="form-group">
+      <label for="description">Descrição</label>
+      <input type="text" name="description" id="description">
+    </div>
+
+    <div class="form-group">
+      <label for="csv-file">Arquivo CSV</label>
+      <input type="file" accept=".csv" name="csv-file" id="csv-file">
+    </div>
+
+    <div class="form-group">
+      <input type="checkbox" name="worker" id="worker" checked>
+      <label for="worker">Usar Worker Theads</label>
+    </div>
+
+    <div class="form-group">
+      <input type="submit" value="Pesquisar">
+      <input type="reset" value="Limpar">
+    </div>
+
+    <div class="form-group">
+      <output id="file-size"></output>
+    </div>
+
+    <div class="form-group">
+      <label for="progress">Processo em progresso:</label>
+      <progress id="progress" name="progress" value="0" max="100">0%</progress>
+    </div>
+
+    <div class="form-group">
+      <output id="debug"></output>
+    </div>
+  </form>
+
+  <script src="./src/index.js" type="module"></script>
+</body>
+</html>
