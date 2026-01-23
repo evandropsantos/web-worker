@@ -1,36 +1,104 @@
-# Web Worker
+# 🚀 Web Worker Demo
 
-Web Workers são mecanismos que permitem que uma operação de um dado script seja executada em uma thread diferente da thread principal da aplicação Web `Main thread`. Permitindo que cálculos laboriosos sejam processados sem que ocorra bloqueio da thread principal (geralmente associado à interface).
+> Web Workers permitem executar scripts em threads em segundo plano, melhorando a performance e responsividade das aplicações web.
 
-![Web Worker](./images/worker.png)
+![Web Worker Architecture](./images/worker.png)
 
-## Exemplo de Código
+## 📋 Sumário
 
-Aqui está um exemplo simples de como criar um Web Worker:
+- [Sobre](#sobre)
+- [Funcionalidades](#funcionalidades)
+- [Como Usar](#como-usar)
+- [Exemplo de Código](#exemplo-de-código)
+- [Demonstração](#demonstração)
+- [Links Úteis](#links-úteis)
 
+## 📖 Sobre
+
+Web Workers são mecanismos que permitem que uma operação de um dado script seja executada em uma thread diferente da thread principal da aplicação Web (`Main thread`). Isso evita o bloqueio da interface do usuário durante cálculos pesados, proporcionando uma experiência mais fluida.
+
+### 🎯 Benefícios
+
+- ✅ **Performance**: Processamento em paralelo
+- ✅ **Responsividade**: Interface não bloqueia
+- ✅ **Escalabilidade**: Melhor uso de recursos do sistema
+
+## ✨ Funcionalidades
+
+- 🔍 **Busca em Arquivos CSV**: Processamento assíncrono de grandes arquivos
+- 📊 **Progresso Visual**: Barra de progresso em tempo real
+- 🧵 **Thread Separada**: Uso de Web Workers para cálculos pesados
+- 📱 **Interface Responsiva**: Design adaptável a diferentes dispositivos
+
+## 🚀 Como Usar
+
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/evandropsantos/web-worker.git
+   cd web-worker
+   ```
+
+2. **Abra no navegador**:
+   - Abra o arquivo `index.html` em um navegador moderno
+   - Selecione um arquivo CSV
+   - Digite a descrição para busca
+   - Clique em "Pesquisar"
+
+3. **Alternativas**:
+   - Ative/desative o uso de Web Workers com o checkbox
+   - Compare a performance entre Main Thread e Worker Thread
+
+## 💻 Exemplo de Código
+
+### Main Thread (index.js)
 ```javascript
-// main.js
+// Criação do worker
 const worker = new Worker('worker.js');
 
+// Recebe mensagens do worker
 worker.onmessage = function(event) {
     console.log('Mensagem do worker:', event.data);
 };
 
+// Envia mensagem para o worker
 worker.postMessage('Olá, Worker!');
 ```
 
+### Worker Thread (worker.js)
 ```javascript
-// worker.js
+// Recebe mensagens da main thread
 onmessage = function(event) {
     console.log('Mensagem do main thread:', event.data);
-    postMessage('Olá, Main Thread!');
+
+    // Processamento pesado aqui
+    const result = heavyComputation(event.data);
+
+    // Envia resultado de volta
+    postMessage(result);
 };
 ```
 
-Os Web Workers são uma parte essencial do desenvolvimento web moderno, permitindo que os desenvolvedores realizem tarefas em segundo plano, melhorando a performance e a responsividade das aplicações. Ao utilizar Web Workers, é possível realizar operações pesadas sem bloquear a interface do usuário, proporcionando uma experiência mais fluida e interativa. 
+## 🎬 Demonstração
 
-## Links úteis
+<div align="center">
+  <img src="./images/demo.gif" alt="Demonstração Web Worker" width="600">
+</div>
 
-- [documentação MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Workers_API#:~:text=Web%20Workers%20s%C3%A3o%20mecanismos%20que,(geralmente%20associado%20%C3%A0%20interface).)
+*Interface da aplicação mostrando busca em arquivo CSV com Web Worker*
 
-- [Como usar web workers do lado do cliente e do servidor](https://blog.openreplay.com/how-to-use-client-and-server-side-web-workers/)
+## 🔗 Links Úteis
+
+- 📚 [Documentação MDN - Web Workers](https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Workers_API)
+- 🛠️ [Como usar Web Workers](https://blog.openreplay.com/how-to-use-client-and-server-side-web-workers/)
+- 🎨 [Exemplos Práticos](https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Workers_API/Using_web_workers)
+- 📥 [Baixar CSV](https://www.kaggle.com/datasets/foenix/slc-crime/data)
+
+---
+
+<div align="center">
+
+**Feito com ❤️ para demonstrar o poder dos Web Workers**
+
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+</div>
