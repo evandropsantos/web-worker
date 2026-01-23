@@ -10,10 +10,11 @@
 - [Funcionalidades](#funcionalidades)
 - [Como Usar](#como-usar)
 - [Exemplo de Código](#exemplo-de-código)
-- [Demonstração](#demonstração)
 - [Links Úteis](#links-úteis)
 
 ## 📖 Sobre
+
+<a id="sobre"></a>
 
 Web Workers são mecanismos que permitem que uma operação de um dado script seja executada em uma thread diferente da thread principal da aplicação Web (`Main thread`). Isso evita o bloqueio da interface do usuário durante cálculos pesados, proporcionando uma experiência mais fluida.
 
@@ -25,12 +26,16 @@ Web Workers são mecanismos que permitem que uma operação de um dado script se
 
 ## ✨ Funcionalidades
 
+<a id="funcionalidades"></a>
+
 - 🔍 **Busca em Arquivos CSV**: Processamento assíncrono de grandes arquivos
 - 📊 **Progresso Visual**: Barra de progresso em tempo real
 - 🧵 **Thread Separada**: Uso de Web Workers para cálculos pesados
 - 📱 **Interface Responsiva**: Design adaptável a diferentes dispositivos
 
 ## 🚀 Como Usar
+
+<a id="como-usar"></a>
 
 1. **Clone o repositório**:
    ```bash
@@ -49,6 +54,8 @@ Web Workers são mecanismos que permitem que uma operação de um dado script se
    - Compare a performance entre Main Thread e Worker Thread
 
 ## 💻 Exemplo de Código
+
+<a id="exemplo-de-código"></a>
 
 ### Main Thread (index.js)
 ```javascript
@@ -80,6 +87,8 @@ onmessage = function(event) {
 ```
 
 ## 🔗 Links Úteis
+
+<a id="links-úteis"></a>
 
 - 📚 [Documentação MDN - Web Workers](https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Workers_API)
 - 🛠️ [Como usar Web Workers](https://blog.openreplay.com/how-to-use-client-and-server-side-web-workers/)
