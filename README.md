@@ -65,6 +65,7 @@ worker.postMessage('Olá, Worker!');
 ```
 
 ### Worker Thread (worker.js)
+
 ```javascript
 // Recebe mensagens da main thread
 onmessage = function(event) {
@@ -78,26 +79,17 @@ onmessage = function(event) {
 };
 ```
 
-## 🎬 Demonstração
-
-<div align="center">
-  <img src="./images/demo.gif" alt="Demonstração Web Worker" width="600">
-</div>
-
-*Interface da aplicação mostrando busca em arquivo CSV com Web Worker*
-
 ## 🔗 Links Úteis
 
 - 📚 [Documentação MDN - Web Workers](https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Workers_API)
 - 🛠️ [Como usar Web Workers](https://blog.openreplay.com/how-to-use-client-and-server-side-web-workers/)
 - 🎨 [Exemplos Práticos](https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Workers_API/Using_web_workers)
+- 📺 [Erick Wendel Academy](https://www.youtube.com/@ErickWendelAcademy) - Tutoriais sobre Web Workers
 - 📥 [Baixar CSV](https://www.kaggle.com/datasets/foenix/slc-crime/data)
 
 ---
 
 <div align="center">
-
-**Feito com ❤️ para demonstrar o poder dos Web Workers**
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
